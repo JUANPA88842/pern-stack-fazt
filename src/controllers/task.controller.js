@@ -62,7 +62,7 @@ const updateTask = async (req, res, next) => {
       "UPDATE task SET title = $1, description = $2 WHERE id = $3 RETURNING *",
       [title, description, id]
     );
-    if (result.rows.lenth === 0)
+    if (result.rows.length === 0)
       return res.status(404).json({
         message: "Task not found",
       });
